@@ -16,7 +16,9 @@
 1. Remember that the network can currently only support one node! If the cluster is started with multiple nodes, certain jobs will run on different nodes than intended and will lead to inconsistencies with which nodes have the files, which will cause errors during various steps in the script.
 2. When creating the persistent volume and its corresponding persistent volume claim, a storageClassName MUST be specified. This is not necessary in an IBM implementation of the network, but will lead to an infinite pending state of container creation if neglected in a Google Cloud Platform launch of the network.
 3. The mountPath directory itself is not important, but it is important that every job and deployment have the same mountPath. This iteration of the network uses /public as a mountPath, which creates/uses a directory called public in the cloud, but one could just as easily call it /potato or /arbitrary as long as the name of the directory is consistent throughout every part of the network.
-4. 
+4. The setup script does not contain any independent functions aside from copying the artifacts from the local directory to the cloud directory. All other commands are to create jobs and deployments and utilize echoes to streamline the process of setting up the network.
+5. Deleting the network after a failed setup is crucial to avoiding errors on the next setup. Always delete the network after the deployment has failed or you are done using it.
+6. If you want to change the mountPath directory, not only must it be changed in all configFiles files, the contents of the artifacts folders must be fixed as well, particularly the certificate authorities files.
 # Functionalities of each file in configFiles
 1. CreateVolume - This file creates the persistent volume and persistent volume claim that the network uses to store data from containers so that the logs for containers are maintained even after their deletion. This is a critical element of container technology. Since it logs all the data from containers, it must be created first to ensure that every execution and error is kept account of after the deletion of all subsequent containers.
 
