@@ -12,6 +12,10 @@
 2. Change directory into MPnetwork (cd MPnetwork), and then (ls). You should bee configFiles, artifacts, test_setup_blockchainNetwork.sh, and testDeleteNetwork.sh.
 3. Ensure that you enable permissions for the scripts to run. Run commands: $ chmod +x test_setup_blockchainNetwork.sh || $ chmod +x testDeleteNetwork.sh
 4. Deploy the network with the command $ test_setup_blockchainNetwork.sh
+# Functions
+1. First, although the network is set up, you need to enter the bash shell of a peer with the command ($ kubectl exec -it <blockchain-org1peer1 pod name> bash). The command to exit the bash shell is simply ($ exit).
+2. The network was started with two electronic wallets, "a" and "b", with balances of 100 and 200 respectively. The command to query the electronic wallet "a" is as follows: ($ peer chaincode query -C channel1 -n cc -c '{"Args":["query", "a"]}').
+3. To change the balances of the electronic wallets, you must use an invoke command. ($ peer chaincode invoke -o blockchain-orderer:31010 -C channel1 -n cc -c '{"Args":["invoke", "a", "b"]}').
 # Important Notes
 1. Remember that the network can currently only support one node! If the cluster is started with multiple nodes, certain jobs will run on different nodes than intended and will lead to inconsistencies with which nodes have the files, which will cause errors during various steps in the script.
 2. When creating the persistent volume and its corresponding persistent volume claim, a storageClassName MUST be specified. This is not necessary in an IBM implementation of the network, but will lead to an infinite pending state of container creation if neglected in a Google Cloud Platform launch of the network.
