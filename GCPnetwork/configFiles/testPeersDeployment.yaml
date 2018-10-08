@@ -17,7 +17,7 @@ spec:
           
       containers:
       - name: orderer
-        image: hyperledger/fabric-orderer:x86_64-1.0.4
+        image: hyperledger/fabric-orderer:x86_64-1.1.0
         command: ["sh", "-c", "sleep 5 && while [ ! -f /public/bootstrapped ]; do echo Waiting for bootstrap; sleep 1; done; orderer"]
         env:
         - name: ORDERER_CFG_PATH
@@ -77,7 +77,7 @@ spec:
           
       containers:
       - name: ca
-        image: hyperledger/fabric-ca:x86_64-1.0.4
+        image: hyperledger/fabric-ca:x86_64-1.1.0
         command: ["sh", "-c", "sleep 1 && while [ ! -f  /public/bootstrapped ]; do echo Waiting for bootstrap; sleep 1; done; fabric-ca-server start -c ${CONFIGYAML}"]
         env:
         - name: CONFIGYAML
@@ -122,8 +122,8 @@ spec:
           
       containers:
       - name: org1peer1
-        image: hyperledger/fabric-peer:x86_64-1.0.4
-        command: ["sh", "-c", "sleep 1 && while [ ! -f /public/bootstrapped ]; do echo Waiting for bootstrap; sleep 1; done; peer node start --peer-defaultchain=false"]
+        image: hyperledger/fabric-peer:x86_64-1.1.0
+        command: ["sh", "-c", "sleep 1 && while [ ! -f /public/bootstrapped ]; do echo Waiting for bootstrap; sleep 1; done; peer node start"]
         env:
         - name: CORE_PEER_ADDRESSAUTODETECT
           value: "true"
@@ -140,7 +140,7 @@ spec:
         - name: CORE_PEER_GOSSIP_BOOTSTRAP
           value: blockchain-org1peer1:30110
         - name: CORE_PEER_GOSSIP_ORGLEADER
-          value: "true"
+          value: "false"
         - name: CORE_PEER_GOSSIP_SKIPHANDSHAKE
           value: "true"
         - name: CORE_PEER_COMMITTER_ENABLED
@@ -209,8 +209,8 @@ spec:
           
       containers:
       - name: org2peer1
-        image: hyperledger/fabric-peer:x86_64-1.0.4
-        command: ["sh", "-c", "sleep 1 && while [ ! -f /public/bootstrapped ]; do echo Waiting for bootstrap; sleep 1; done; peer node start --peer-defaultchain=false"]
+        image: hyperledger/fabric-peer:x86_64-1.1.0
+        command: ["sh", "-c", "sleep 1 && while [ ! -f /public/bootstrapped ]; do echo Waiting for bootstrap; sleep 1; done; peer node start"]
         env:
         - name: CORE_PEER_ADDRESSAUTODETECT
           value: "true"
@@ -227,7 +227,7 @@ spec:
         - name: CORE_PEER_GOSSIP_BOOTSTRAP
           value: blockchain-org2peer1:30210
         - name: CORE_PEER_GOSSIP_ORGLEADER
-          value: "true"
+          value: "false"
         - name: CORE_PEER_GOSSIP_SKIPHANDSHAKE
           value: "true"
         - name: CORE_PEER_COMMITTER_ENABLED
@@ -296,8 +296,8 @@ spec:
           
       containers:
       - name: org3peer1
-        image: hyperledger/fabric-peer:x86_64-1.0.4
-        command: ["sh", "-c", "sleep 1 && while [ ! -f /public/bootstrapped ]; do echo Waiting for bootstrap; sleep 1; done; peer node start --peer-defaultchain=false"]
+        image: hyperledger/fabric-peer:x86_64-1.1.0
+        command: ["sh", "-c", "sleep 1 && while [ ! -f /public/bootstrapped ]; do echo Waiting for bootstrap; sleep 1; done; peer node start"]
         env:
         - name: CORE_PEER_ADDRESSAUTODETECT
           value: "true"
@@ -314,7 +314,7 @@ spec:
         - name: CORE_PEER_GOSSIP_BOOTSTRAP
           value: blockchain-org3peer1:30310
         - name: CORE_PEER_GOSSIP_ORGLEADER
-          value: "true"
+          value: "false"
         - name: CORE_PEER_GOSSIP_SKIPHANDSHAKE
           value: "true"
         - name: CORE_PEER_COMMITTER_ENABLED
@@ -383,8 +383,8 @@ spec:
           
       containers:
       - name: org4peer1
-        image: hyperledger/fabric-peer:x86_64-1.0.4
-        command: ["sh", "-c", "sleep 1 && while [ ! -f /public/bootstrapped ]; do echo Waiting for bootstrap; sleep 1; done; peer node start --peer-defaultchain=false"]
+        image: hyperledger/fabric-peer:x86_64-1.1.0
+        command: ["sh", "-c", "sleep 1 && while [ ! -f /public/bootstrapped ]; do echo Waiting for bootstrap; sleep 1; done; peer node start"]
         env:
         - name: CORE_PEER_ADDRESSAUTODETECT
           value: "true"
@@ -401,7 +401,7 @@ spec:
         - name: CORE_PEER_GOSSIP_BOOTSTRAP
           value: blockchain-org4peer1:30410
         - name: CORE_PEER_GOSSIP_ORGLEADER
-          value: "true"
+          value: "false"
         - name: CORE_PEER_GOSSIP_SKIPHANDSHAKE
           value: "true"
         - name: CORE_PEER_COMMITTER_ENABLED

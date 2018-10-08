@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#check if config files are available
+# and if avaialble set the KUBECONFIG_FOLDER variable.
 if [ -d "${PWD}/configFiles" ]; then
     KUBECONFIG_FOLDER=${PWD}/configFiles
 else
