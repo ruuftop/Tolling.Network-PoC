@@ -14,7 +14,7 @@
 4. Deploy the network with the command $ test_setup_blockchainNetwork.sh
 # Functions
 1. First, although the network is set up, you need to enter the bash shell of a peer with the command ($ kubectl exec -it [blockchain-org1peer1 pod name] bash). So for this network, the command would be ($ kubectl exec -it blockchain-org1peer1 bash). The command to exit the bash shell is simply ($ exit).
-2. The network was started with two electronic wallets, "a" and "b", with balances of 100 and 200 respectively. The command to query the electronic wallet "a" is as follows: ($ peer chaincode query -C channel1 -n cc -c '{"Args":["query", "a"]}').
+2. The account data is present in GCPnetwork/artifacts/chaincode/chaincode_example02/account.json You can now load this data into the blockchain network using peer chaincode invoke -n cc -C channel1 -c '{"Args":["InitLedger","account.json"]}'
 3. To change the balances of the electronic wallets, you must use an invoke command. ($ peer chaincode invoke -o blockchain-orderer:31010 -C channel1 -n cc -c '{"Args":["invoke", "a", "b", "10"]}').
 # Important Notes
 1. Remember that the network can currently only support one node! If the cluster is started with multiple nodes, certain jobs will run on different nodes than intended and will lead to inconsistencies with which nodes have the files, which will cause errors during various steps in the script.
