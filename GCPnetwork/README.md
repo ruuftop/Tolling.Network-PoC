@@ -14,9 +14,9 @@
 4. Deploy the network with the command $ test_setup_blockchainNetwork.sh
 # Functions
 1. First, although the network is set up, you need to enter the bash shell of a peer with the command ($ kubectl exec -it [blockchain-org1peer1 pod name] bash). So for this network, the command would be ($ kubectl exec -it blockchain-org1peer1 bash). The command to exit the bash shell is simply ($ exit).
-2. The account data is present in GCPnetwork/artifacts/chaincode/chaincode_example02/account.json You can now load this data into the blockchain network using the below command:
-  peer chaincode invoke -n cc -C channel1 -c '{"Args":["InitLedger","account.json"]}'
-3. To change the balances of the electronic wallets, you must use an invoke command. ($ peer chaincode invoke -o blockchain-orderer:31010 -C channel1 -n cc -c '{"Args":["invoke", "a", "b", "10"]}').
+2. The account data is present in GCPnetwork/artifacts/chaincode/chaincode_example02/account.json You can now load this data into the blockchain network using this command: peer chaincode invoke -n cc -C channel1 -c '{"Args":["InitLedger","account.json"]}'
+3. To check the current account status and other account details you can use this query command: peer chaincode query -C channel1 -n cc -c '{"Args":["queryAccount", "B608843779"]}'
+4. In order to update the account status, you can use this command: peer chaincode invoke -C channel1 -n cc -c '{"Args":["changeAccountStatus", "B608843779", "1"]}'
 # Important Notes
 1. Remember that the network can currently only support one node! If the cluster is started with multiple nodes, certain jobs will run on different nodes than intended and will lead to inconsistencies with which nodes have the files, which will cause errors during various steps in the script.
 2. When creating the persistent volume and its corresponding persistent volume claim, a storageClassName MUST be specified. This is not necessary in an IBM implementation of the network, but will lead to an infinite pending state of container creation if neglected in a Google Cloud Platform launch of the network.
