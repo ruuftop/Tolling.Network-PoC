@@ -9,7 +9,7 @@
 4. Connect to the cluster via terminal with the command obtained by clicking "Connect", to the right of the cluster name. This will let you gain access to your cluster.
 # Create and deploy network in the single-node Kubernetes cluster
 1. Clone the network files into your intended directory.
-2. Change directory into MPnetwork (cd MPnetwork), and then (ls). You should bee configFiles, artifacts, test_setup_blockchainNetwork.sh, and testDeleteNetwork.sh.
+2. Change directory into MPnetwork (cd MPnetwork), and then (ls). You should see configFiles, artifacts, test_setup_blockchainNetwork.sh, and testDeleteNetwork.sh.
 3. Ensure that you enable permissions for the scripts to run. Run commands: $ chmod +x test_setup_blockchainNetwork.sh || $ chmod +x testDeleteNetwork.sh
 4. Deploy the network with the command $ test_setup_blockchainNetwork.sh
 # Functions
