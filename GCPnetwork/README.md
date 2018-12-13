@@ -1,5 +1,5 @@
 # Prerequisites
-1. Download the required programs to run hyperledger fabric. Visit http://hyperledger-fabric.readthedocs.io/en/latest/prereqs.html and mmake sure to install the appropriate versions for your OS.
+1. Download the required programs to run Hyperledger Fabric. Visit http://hyperledger-fabric.readthedocs.io/en/latest/prereqs.html and make sure to install the appropriate versions for your OS.
 2. Install the Google Cloud SDK. Follow the steps in this link https://cloud.google.com/sdk/docs/quickstarts.
 3. Use the newly installed gcloud commands to install kubectl here: https://kubernetes.io/docs/tasks/tools/install-kubectl/.
 # Steps
@@ -15,7 +15,7 @@
 # Functions
 1. First, although the network is set up, you need to enter the bash shell of a peer with the command ($ kubectl exec -it [blockchain-org1peer1 pod name] bash). So for this network, the command would be ($ kubectl exec -it blockchain-org1peer1 bash). The command to exit the bash shell is simply ($ exit).
 2. The account data is present in GCPnetwork/artifacts/chaincode/chaincode_example02/account.json You can now load this data into the blockchain network using this command: peer chaincode invoke -n cc -C channel1 -c '{"Args":["InitLedger","account.json"]}'
-3. To check the current account status and other account details you can use this query command: peer chaincode query -C channel1 -n cc -c '{"Args":["queryAccount", "B608843779"]}'
+3. To check the current account status and other account details, you can use this query command: peer chaincode query -C channel1 -n cc -c '{"Args":["queryAccount", "B608843779"]}'
 4. In order to update the account status, you can use this command: peer chaincode invoke -C channel1 -n cc -c '{"Args":["changeAccountStatus", "B608843779", "1"]}'
 # Important Notes
 1. Remember that the network can currently only support one node! If the cluster is started with multiple nodes, certain jobs will run on different nodes than intended and will lead to inconsistencies with which nodes have the files, which will cause errors during various steps in the script.
