@@ -1,5 +1,5 @@
-Tolling.network is a distributed ledger solution for tolling services. It provides flexible, efficient, and scalable alternatives for agency-to-agency interoperability models and modular interoperability apps for a wide range of third-party services.
+Tolling.network is a distributed ledger solution for tolling interoperability. It provides a flexible, efficient, and scalable cloud-based alternative for sharing agency-to-agency data.
 
-Built on Hyperledger Fabric, "a fully-vetted, open source architecture," tolling.network is uniqely suited for enterprise applications.
+Tolling.Network is built on Hyperledger Fabric.
 
 Read the original white paper: [A Unified Tolling Network](https://milliganpartners.com/unified-tolling-network/)
