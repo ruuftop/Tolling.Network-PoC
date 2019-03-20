@@ -13,8 +13,13 @@
 3. Ensure that you enable permissions for the scripts to run. Run commands: $ chmod +x test_setup_blockchainNetwork.sh || $ chmod +x testDeleteNetwork.sh
 4. Deploy the network with the command $ test_setup_blockchainNetwork.sh
 # Upgrade Chaincode
-You can upgrade the chaincode after deploying the network. Run he below script to upgrade your chaincode.
-xyz.sh
+You can upgrade the chaincode after deploying the network. Run the below script to upgrade your chaincode. 
+
+UpgradeChaincode.sh
+
+You need to add new chaincode to the file at this location: artifacts/chaincode/chaincode_example02/chaincode_example02.js
+Before you run the script, remember to set the new version of the chaincode in below two files configFiles/UpgradeChaincode/NewChaincodeInstall.yaml and 
+configFiles/UpgradeChaincode/ChaincodeUpgrade.yaml
 # Functions
 1. First, although the network is set up, you need to enter the bash shell of a peer with the command ($ kubectl exec -it [blockchain-org1peer1 pod name] bash). So for this network, the command would be ($ kubectl exec -it blockchain-org1peer1 bash). The command to exit the bash shell is simply ($ exit).
 2. The account data is present in GCPnetwork/artifacts/chaincode/chaincode_example02/account.json You can now load this data into the blockchain network using this command: peer chaincode invoke -n cc -C channel1 -c '{"Args":["InitLedger","account.json"]}'
