@@ -8,6 +8,7 @@ fi
 pod=$(kubectl get pods -l name=org1peer1 --output=jsonpath={.items..metadata.name})
 kubectl cp artifacts/chaincode/chaincode_example02/chaincode_example02.js $pod:/public/artifacts/chaincode/chaincode_example02/ -c org1peer1
 echo "waiting 5 seconds to avoid network delay."
+sleep 5;
 
 kubectl delete -f ${KUBECONFIG_FOLDER}/UpgradeChaincode/NewChaincodeInstall.yaml
 sleep 5;
