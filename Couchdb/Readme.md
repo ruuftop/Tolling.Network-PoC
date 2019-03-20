@@ -18,3 +18,8 @@ Below commands retrievs data using the above created design document and views.
 curl -g -X GET http://127.0.0.1:5984/channel1_cc/_design/moneyOwed/_view/totalAccounts?key=[\"B\",\"A\",\"unpaid\"]
 ```
 
+### Exporting data from state database
+An interesting use case is to export the contents of the World state to a remote couchDB database. This can be used by lane controller which might not have sufficient bandwidth to connect to the peer on the network. By regularly running the below command, the lane controllers can just copy the entire world state to a local coucgDB database.
+```
+curl -X POST http://127.0.0.1:5984/_replicate -d '{"source":"http://127.0.0.1:5984/channel1_cc","target":"http://username:password@xx.xxx.xxx.xxx:5984/xxx"}' -H "Content-Type: application/json"
+```
