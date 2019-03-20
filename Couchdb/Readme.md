@@ -1,3 +1,4 @@
-CouchDB is our state database that supports rich queries. Rich queries are more flexible and efficient against large indexed data stores, when you want to query the actual data value content rather than the keys. CouchDB is a JSON document datastore rather than a pure key-value store therefore enabling indexing of the contents of the documents in the database.
+(World State)[https://hyperledger-fabric.readthedocs.io/en/release-1.4/ledger/ledger.html#world-state] holds the current values of all keys in the blockchain. 
 
 optional reading: https://hyperledger-fabric.readthedocs.io/en/release-1.4/couchdb_tutorial.html
+
