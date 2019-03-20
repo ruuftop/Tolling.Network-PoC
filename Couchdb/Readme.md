@@ -9,10 +9,12 @@ curl -X GET http://127.0.0.1:5984/
 
 ### Adding new views for efficient data retrieval
 Below command adds a new design document with several views. 
+
 curl -X PUT http://127.0.0.1:5984/channel1_cc/_design/moneyOwed --data-binary @MoneyOwed.json
 
 ### Retrieving data from the views
 Below commands retrievs data using the desugn document and views.
+
 curl -g -X GET http://127.0.0.1:5984/channel1_cc/_design/moneyOwed/_view/totalAccounts?key=[\"B\",\"A\",\"unpaid\"]
 
 
