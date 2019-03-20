@@ -7,13 +7,13 @@ In our blockchain network, each peer has a couchDB database that contains the wo
 curl -X GET http://127.0.0.1:5984/
 (Note:You might want to install curl if it is not already installed.)
 
-### Adding new views for efficient data retrieval
+### Adding new design document and views for efficient data retrieval
 Below command adds a new design document with several views. 
 ```
 curl -X PUT http://127.0.0.1:5984/channel1_cc/_design/moneyOwed --data-binary @MoneyOwed.json
 ```
 ### Retrieving data from the views
-Below commands retrievs data using the desugn document and views.
+Below commands retrievs data using the above created design document and views.
 ```
 curl -g -X GET http://127.0.0.1:5984/channel1_cc/_design/moneyOwed/_view/totalAccounts?key=[\"B\",\"A\",\"unpaid\"]
 ```
