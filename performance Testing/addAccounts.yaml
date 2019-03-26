@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: addaccounts
+spec:
+  template:
+    spec:
+      containers:
+      - name: addaccounts
+        image: alpine:3.7
+        command: ["sh", "-c", "apk add --no-cache curl; curl -X GET http://35.239.207.15/runScripts" ]
+      restartPolicy: Never
+  backoffLimit: 4

@@ -1,0 +1,19 @@
+1) To start a new service to expose our backend servise using a load Balancer.
+kubectl expose deployment blockchain-org1peer1 --type=LoadBalancer --name=my-service --port 80 --target-port 8080
+
+
+2) To delete the service
+kubectl delete service my-service
+
+3) Install vim in pod
+apt-get update
+apt-get install vim
+
+4) Install node js in pod
+apt-get install curl
+curl -sL https://deb.nodesource.com/setup_9.x | bash
+apt-get install nodejs
+
+5) Install express js
+npm install express
+npm install shelljs
