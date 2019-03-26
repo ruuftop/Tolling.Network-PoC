@@ -41,7 +41,7 @@ var Chaincode = class {
 
     let transaction = {};
     let transaction.docType = args[0].substr(0,4); //STRAN is expected
-    let TxnDataSeqNum = args[0].substr(37,49); //transaction Data sequence number is a nine digit number
+    let TxnDataSeqNum = args[0].substr(37,49); //transaction Data sequence number is a 12 digit number
     let transaction.headerData = args[0];
     let transaction.messageData = args[1];
 
@@ -62,7 +62,7 @@ var Chaincode = class {
 
     let Adjustment = {};
     let Adjustment.docType = args[0].substr(0,4); //SCORR is expected
-    let CorrDataSeqNum = args[0].substr(37,49); //Correction Data sequence number is a nine digit number
+    let CorrDataSeqNum = args[0].substr(37,49); //Correction Data sequence number is a 12 digit number
     let Adjustment.headerData = args[0];
     let Adjustment.messageData = args[1];
 
@@ -83,7 +83,7 @@ var Chaincode = class {
 
     let Reconciliation = {};
     let Reconciliation.docType = args[0].substr(0,4); //SRECON is expected
-    let ReconDataSeqNum = args[0].substr(37,49); //Reconciliation Data sequence number is a nine digit number
+    let ReconDataSeqNum = args[0].substr(37,49); //Reconciliation Data sequence number is a 12 digit number
     let Reconciliation.header_data = args[0];
     let Reconciliation.messageData = args[1];
 
