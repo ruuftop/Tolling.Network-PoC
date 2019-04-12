@@ -292,6 +292,56 @@ var Chaincode = class {
     }
   }
 
+  async InitLedgerAdvanced (stub,args) {
+   console.log('========Ledger Initialization========');
+   let ret = stub.getFunctionAndParameters();
+   console.info(ret);
+   console.info("arguments are :");
+   console.log(args[0]);
+
+   let account = JSON.parse(args[0]);
+   console.info("accounts 0:");
+   console.info(account[0]);
+   console.info("accounts 1:");
+   console.info(account[1]);
+   console.info("accounts 2:");
+   console.info(account[2]);
+   var date = new Date();
+
+   var hour = date.getHours();
+   hour = (hour < 10 ? "0" : "") + hour;
+
+   var min  = date.getMinutes();
+   min = (min < 10 ? "0" : "") + min;
+
+   var sec  = date.getSeconds();
+   sec = (sec < 10 ? "0" : "") + sec;
+
+   var year = date.getFullYear();
+
+   var month = date.getMonth() + 1;
+   month = (month < 10 ? "0" : "") + month;
+
+   var day  = date.getDate();
+   day = (day < 10 ? "0" : "") + day;
+
+   let date_ =  year + ":" + month + ":" + day + ":" + hour + ":" + min + ":" + sec;
+
+   let i;
+   let key_;
+   for(i=0;i<account.length;i++){
+       account[i].date_ = date_;
+       key_ = account[i].accountID;
+       account[i].docType = 'account';
+       account[i].parentAgency = key_.substr(0,1);
+
+       await stub.putState(account[i].accountID, Buffer.from(JSON.stringify(account[i])));
+   }
+   console.info('============= END : Added account ===========');
+
+  }
+
+
 
 
 
