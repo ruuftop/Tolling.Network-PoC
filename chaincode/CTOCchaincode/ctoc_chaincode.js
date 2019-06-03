@@ -94,7 +94,7 @@ var Chaincode = class {
     let recon_toll_charges.occupancy = Number(args[12]);
     let recon_toll_charges.protocol_type = Number(args[13]);
     let recon_toll_charges.post_amt = Number(args[14]);
-    let recon_toll_charges.response_code = Number(args[15]);
+    let recon_toll_charges.response_code = args[15];
 
      // Header record from file. In the future, check if some of these can be omitted
     let recon_toll_charges.fileType = "RECONCILE";
@@ -127,7 +127,7 @@ var Chaincode = class {
   let tag.subtype-a = args[4];
   let tag.subtype-b = args[5];
   let tag.subtype-c = args[6];
-  let tag.protocol_type = args[7];
+  let tag.protocol_type = Number(args[7]);
 
   // Header record from file. In the future, check if some of these can be omitted
   let tag.fileType = "TAGS"
