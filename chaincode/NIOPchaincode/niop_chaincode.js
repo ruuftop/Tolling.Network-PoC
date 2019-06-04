@@ -104,7 +104,7 @@ var Chaincode = class {
 
     let tvl = {};
     let tvl.docType = args[0].substr(0,4); //STVL is expected
-    let accountNum = args[1].substr(166,216); // account number from TVL
+    let accountNum = args[1].substr(165,215); // account number from TVL, assuming all Optional fields are complete
     let tvl.header_data = args[0];
     let tvl.messageData = args[1];
 
