@@ -27,7 +27,7 @@ spec:
         - name: FABRIC_CFG_PATH
           value: /etc/hyperledger/fabric
         - name: CORE_PEER_MSPCONFIGPATH
-          value: /public/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+          value: /public/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/ca
         - name: CORE_PEER_LOCALMSPID
           value: Org1MSP
         - name: CORE_PEER_ADDRESS
@@ -50,7 +50,7 @@ spec:
         - name: FABRIC_CFG_PATH
           value: /etc/hyperledger/fabric
         - name: CORE_PEER_MSPCONFIGPATH
-          value: /public/crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
+          value: /public/crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/ca
         - name: CORE_PEER_LOCALMSPID
           value: Org2MSP
         - name: CORE_PEER_ADDRESS
@@ -73,7 +73,7 @@ spec:
         - name: FABRIC_CFG_PATH
           value: /etc/hyperledger/fabric
         - name: CORE_PEER_MSPCONFIGPATH
-          value: /public/crypto-config/peerOrganizations/org3.example.com/users/Admin@org3.example.com/msp
+          value: /public/crypto-config/peerOrganizations/org3.example.com/users/Admin@org3.example.com/ca
         - name: CORE_PEER_LOCALMSPID
           value: Org3MSP
         - name: CORE_PEER_ADDRESS
@@ -96,7 +96,7 @@ spec:
         - name: FABRIC_CFG_PATH
           value: /etc/hyperledger/fabric
         - name: CORE_PEER_MSPCONFIGPATH
-          value: /public/crypto-config/peerOrganizations/org4.example.com/users/Admin@org4.example.com/msp
+          value: /public/crypto-config/peerOrganizations/org4.example.com/users/Admin@org4.example.com/ca
         - name: CORE_PEER_LOCALMSPID
           value: Org4MSP
         - name: CORE_PEER_ADDRESS

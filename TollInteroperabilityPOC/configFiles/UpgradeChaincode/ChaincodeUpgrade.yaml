@@ -30,7 +30,7 @@ spec:
         - name: FABRIC_CFG_PATH
           value: /etc/hyperledger/fabric
         - name: CORE_PEER_MSPCONFIGPATH
-          value: /public/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+          value: /public/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/ca
         - name: CORE_PEER_LOCALMSPID
           value: Org1MSP
         - name: CORE_PEER_ADDRESS

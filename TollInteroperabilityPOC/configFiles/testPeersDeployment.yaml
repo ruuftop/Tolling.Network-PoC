@@ -41,7 +41,7 @@ spec:
         - name: ORDERER_GENERAL_LOGLEVEL
           value: debug
         - name: ORDERER_GENERAL_LOCALMSPDIR
-          value: /public/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp
+          value: /public/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/ca
         - name: ORDERER_GENERAL_LOCALMSPID
           value: OrdererMSP
         - name: ORDERER_GENERAL_GENESISMETHOD
@@ -156,7 +156,7 @@ spec:
         - name: CORE_PEER_LOCALMSPID
           value: Org1MSP
         - name: CORE_PEER_MSPCONFIGPATH
-          value: /public/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp
+          value: /public/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/ca
         - name: CORE_LOGGING_LEVEL
           value: debug
         - name: CORE_LOGGING_PEER
@@ -249,7 +249,7 @@ spec:
         - name: CORE_PEER_LOCALMSPID
           value: Org2MSP
         - name: CORE_PEER_MSPCONFIGPATH
-          value: /public/crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/msp/
+          value: /public/crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/ca/
         - name: CORE_LOGGING_LEVEL
           value: debug
         - name: CORE_LOGGING_PEER
@@ -342,7 +342,7 @@ spec:
         - name: CORE_PEER_LOCALMSPID
           value: Org3MSP
         - name: CORE_PEER_MSPCONFIGPATH
-          value: /public/crypto-config/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/msp/
+          value: /public/crypto-config/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/ca/
         - name: CORE_LOGGING_LEVEL
           value: debug
         - name: CORE_LOGGING_PEER
@@ -435,7 +435,7 @@ spec:
         - name: CORE_PEER_LOCALMSPID
           value: Org4MSP
         - name: CORE_PEER_MSPCONFIGPATH
-          value: /public/crypto-config/peerOrganizations/org4.example.com/peers/peer0.org4.example.com/msp/
+          value: /public/crypto-config/peerOrganizations/org4.example.com/peers/peer0.org4.example.com/ca/
         - name: CORE_LOGGING_LEVEL
           value: debug
         - name: CORE_LOGGING_PEER
